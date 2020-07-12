@@ -22,8 +22,7 @@ int main ()
     int op, cont, aux = 0,  num; // Variavel para guardar as opçoes op, cont contador = i e aux = j auxiliar
     float area;
 
-do 
-{
+do {
 
     printf("\n\nInformar o numero de acordo com a ferramenta que deseja utilizar:\n");
     printf("(1) Verificar se o numero e primo\n");
@@ -40,29 +39,23 @@ do
     printf("(12) Para encerrar o programa!\n");
     scanf("%d", &op);
 
-    if (op == 1)
-    {
-        aux = 0;
+    if (op == 1) { 
+        aux = 0; // Quando inicializar o programa o aux vai zerar
 
         printf("\n\nDigite um valor: ");  
         scanf("%i", &num);
     
-        for (cont = 1; cont <= num; cont++)
-        {
+        for (cont = 1; cont <= num; cont++) {
 
-        if (num % cont == 0)
-        {
+        if (num % cont == 0) {
             aux++;
         }
 
         }
 
-        if (aux == 2)
-        {
+        if (aux == 2) {
             printf("O valor digitado e primo!\n");
-        }
-        else
-        {
+        }else {
             printf("O valor digitado nao e primo!\n");
         }
 
@@ -70,7 +63,7 @@ do
 
     }
 
-} while (op != 12);
+}while (op != 12);
      
     return 0;
 }

@@ -1,7 +1,6 @@
 #include <stdio.h> 
 #include <stdlib.h> 
 
-
 /*
     Trabalho para a disciplina Tópicos especiais (SIN 494)
 
@@ -11,7 +10,6 @@
     Matricula: 
      6962, 5199 e 6965 (respectivamente aos nomes)
 
-
     Nome do Programa:
     Kit de Ferramentas
 */
@@ -19,7 +17,7 @@
 int main ()
 {
     int op, op_area , cont, i, c1, c2, c3, aux = 0,  num, n; // Variavel para guardar as opçoes op, cont contador = i e aux = j auxiliar, c1 = contador1
-    float lado, areaquadrado, areatriangulo, arearetangulo, base, altura;
+    float lado, areaquadrado, areatriangulo, arearetangulo, base, altura, resultado;
 
     do{
 
@@ -58,11 +56,13 @@ int main ()
         
             for (cont = 1; cont <= num; cont++){ 
 
-            if (num % cont == 0){ 
-                aux++;
-            }
+                if (num % cont == 0){ 
+                    
+                    aux++;
 
-        }
+                }
+
+            }
 
             if (aux == 2){
                 printf("O valor digitado e primo!\n");
@@ -70,7 +70,7 @@ int main ()
                 printf("O valor digitado nao e primo!\n");
             }
 
-            sleep(3);
+            getchar();
 
         }
         
@@ -116,22 +116,22 @@ int main ()
 
                 case 1:
                     printf("\nA area do Trinagulo calculada e: %0.2f", areatriangulo);
-                    sleep(4);
+                    getchar();
                 break;
 
                 case 2:
                     printf("\nA area do Quadrado calculada e: %0.2f", areaquadrado);
-                    sleep(4);
+                    getchar();
                 break;
 
                 case 3:
                     printf("\nA area do Retangulo calculada e: %0.2f", arearetangulo);
-                    sleep(4);
+                    getchar();
                 break;
 
                 default:
                     printf("\nA opçao digitada e invalida");
-                    sleep(4);
+                    getchar();
                 break;
 
         }
@@ -162,10 +162,89 @@ int main ()
             }
 
             printf("\n\nO enesimo elemento e: %i\n", c1);
-
-            sleep(4);
+            getchar();
         
         }
+
+        else if (op == 4) {
+            
+            printf("\nInforme um numero para calcular seu fatorial: \n\n");
+            scanf("%d", &num);
+            getchar();
+
+            system(" cls || clear ");
+
+            c1 = 1;
+
+            for(i = num;i > 0; i--){   // num = 5 // i = 5// 5 > 0; 
+                
+                c1 = i * c1; 
+                
+                // c1 = 5 * 1
+                // c1 = 5
+                // i = 4 
+                // 5 * 4
+                // c1 = 20
+                // 20 * 3
+                // c1 = 60
+                // 60 * 2
+                // c1 = 120
+                // 120 * 1
+                // c1 = 120
+
+            }
+            
+            printf("O fatorial de %d e: %d\n", num,c1);
+
+            printf ("\nPressione \"Enter\" para retornar ao Menu!\n");
+
+            getchar();
+            
+        }
+
+        else if (op == 5) {
+
+            system (" cls || clear ");
+
+            printf("Digite um numero para a base: ");
+            scanf("%f", &base);
+
+            getchar();
+
+            system(" cls || clear ");
+
+            printf("Digite um expoente natural: "); // expoente inteiro não negativo
+            scanf("%i", &c2);
+
+            getchar();
+
+            while (c2 < 0) {
+
+                system(" cls || clear ");
+
+                printf("Informação invalida, digite novamente: ");
+                scanf("%i", &c2);
+
+                getchar();
+
+            }
+
+            getchar();
+
+            system(" cls || clear ");
+
+            resultado = 1; // inicialização
+
+            for (i = 1; i <= c2; i++) {
+                resultado *= base; 
+            }
+
+            printf("O resultado de %0.2f elevado a %i e: %0.2f\n", base, c2, resultado);
+
+            printf ("\nPressione \"Enter\" para retornar ao Menu!\n");
+
+            getchar();
+    }
 
     }while (op != 12);
 

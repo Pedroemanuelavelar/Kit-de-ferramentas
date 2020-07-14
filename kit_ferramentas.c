@@ -44,11 +44,14 @@ int main ()
 
         system (" cls || clear ");
 
+        // Verifica se o número é primo
         if (op == 1){
             aux = 0;
 
             printf("\nDigite um valor: ");  
             scanf("%i", &num);
+
+            printf ("\nPressione \"Enter\" para continuar o programa.\n");
 
             getchar();
 
@@ -70,6 +73,8 @@ int main ()
                 printf("O valor digitado nao e primo!\n");
             }
 
+            printf ("\nPressione \"Enter\" para retornar ao Menu!\n");
+
             getchar();
 
         }
@@ -82,55 +87,80 @@ int main ()
 
             op_area = 0;
 
-            printf("\nEscolha uma das figuras abaixo: ");
+            printf("\nEscolha uma das figuras abaixo:\n ");
             printf("\n(1) Calcular a Area do Triangulo");
             printf("\n(2) Calcular a Area do Quadrado");
-            printf("\n(3) Calcular a Area do Retangulo\n");
+            printf("\n(3) Calcular a Area do Retangulo\n\n");
             scanf("%d", &op_area);// Variavel que guarda a opção que o usuario digitou. 
 
             getchar();
 
             system(" cls || clear ");
 
-            if (op_area == 2) {
-                printf("\nInforme o valor do lado do quadrado: ");
-                scanf("%f", &lado);
-            }
-            else {
-                printf("\nInforme a base da figura: ");
-                scanf("%f", &base);
-
-                printf("\nInfome a altura da figura: ");
-                scanf("%f", &altura);
-            }
-
-            getchar();
-
-            system(" cls || clear ");
-
-            arearetangulo = base * altura; 
-            areaquadrado =  lado * lado;
-            areatriangulo = ( base * altura ) / 2;
-
             switch (op_area) {
 
                 case 1:
-                    printf("\nA area do Trinagulo calculada e: %0.2f", areatriangulo);
+                    printf("Informe a base da figura: ");
+                    scanf("%f", &base);
+
+                    printf("\nInfome a altura da figura: ");
+                    scanf("%f", &altura);
+
+                    getchar();
+
+                    system (" cls || clear");
+
+                    areatriangulo = ( base * altura ) / 2;
+
+                    printf("A area do Trinagulo calculada e: %0.2f\n", areatriangulo);
+
+                    printf ("\nPressione \"Enter\" para retornar ao Menu!\n");
+
                     getchar();
                 break;
 
                 case 2:
-                    printf("\nA area do Quadrado calculada e: %0.2f", areaquadrado);
+                    printf("Informe o valor do lado do quadrado: ");
+                    scanf("%f", &lado);
+
+                    getchar();
+
+                    system(" cls || clear ");
+
+                    areaquadrado =  lado * lado;
+
+                    printf("A area do Quadrado calculada e: %0.2f\n", areaquadrado);
+
+                    printf ("\nPressione \"Enter\" para retornar ao Menu!\n");
+
                     getchar();
                 break;
 
                 case 3:
-                    printf("\nA area do Retangulo calculada e: %0.2f", arearetangulo);
+                    printf("Informe a base da figura: ");
+                    scanf("%f", &base);
+
+                    printf("\nInfome a altura da figura: ");
+                    scanf("%f", &altura);
+
+                    getchar();
+
+                    system(" cls || clear ");
+
+                    arearetangulo = base * altura; 
+
+                    printf("A area do Retangulo calculada e: %0.2f\n", arearetangulo);
+
+                    printf ("\nPressione \"Enter\" para retornar ao Menu!\n");
+
                     getchar();
                 break;
 
                 default:
-                    printf("\nA opçao digitada e invalida");
+                    printf("A opçao digitada e invalida\n"); 
+
+                    printf ("\nPressione \"Enter\" para retornar ao Menu!\n");
+
                     getchar();
                 break;
 
@@ -161,7 +191,10 @@ int main ()
 
             }
 
-            printf("\n\nO enesimo elemento e: %i\n", c1);
+            printf("O %i° elemento e: %i\n", n,c1);
+
+            printf ("\nPressione \"Enter\" para retornar ao Menu!\n");
+
             getchar();
         
         }
@@ -209,15 +242,18 @@ int main ()
             printf("Digite um numero para a base: ");
             scanf("%f", &base);
 
+            printf ("\nPressione \"Enter\" para continuar!\n");
+
             getchar();
 
             system(" cls || clear ");
 
-            printf("Digite um expoente natural: "); // expoente inteiro não negativo
+            printf("Digite um expoente natural: "); // expoente inteiro não negativo 
             scanf("%i", &c2);
 
             getchar();
 
+            // Para caso o usuário digite um número negativo, irá cair no while
             while (c2 < 0) {
 
                 system(" cls || clear ");
@@ -233,9 +269,9 @@ int main ()
 
             system(" cls || clear ");
 
-            resultado = 1; // inicialização
+            resultado = 1; // inicialização 
 
-            for (i = 1; i <= c2; i++) {
+            for (i = 1; i <= c2; i++) { 
                 resultado *= base; 
             }
 
@@ -252,7 +288,7 @@ int main ()
 
     printf("Programa criado por: \n");
     printf("\nCarlos Eduardo Maximo - (6962)");
-    printf("\nPedro Emanuel de Avelar Sousa de Almeida (6965)");
+    printf("\nPedro Emanuel de Avelar Sousa de Almeida - (6965)");
     printf("\nJoao Pedro Pereira da Silva - (5199)");
 
     printf("\n\nAuxiliado tambem por: \n");

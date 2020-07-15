@@ -14,7 +14,7 @@
 
 int main ()
 {
-    int op, op_area , cont, i, c1, c2, c3, aux = 0,  num, n; // Variavel para guardar as opçoes op, cont contador = i e aux = j auxiliar, c1 = contador1
+    int op, op_area , cont, i, c1, j, c2, c3, aux = 0,  num, hora, minuto, ano, n, mdc; // Variavel para guardar as opçoes op, cont contador = i e aux = j auxiliar, c1 = contador1
     float num_media, lado, areaquadrado, areatriangulo, arearetangulo, base, altura, resultado;
 
     do{
@@ -315,6 +315,91 @@ int main ()
                 getchar();
             }
 
+        }
+
+        // Calcula o MDC
+        else if (op == 7) {
+
+            printf("Digite um numero:  ");
+            scanf("%i", &num);
+
+            printf("Digite outro numero:  ");
+            scanf("%i", &n);
+
+            getchar();
+
+            system(" cls || clear ");
+
+            aux = 0; 
+            mdc = 1;
+
+            // Este for faz a fatoração
+            for (c1 = 1; num > 1 || n > 1; c1++) {
+
+            // Abaixo o código verifca e imprime um numero primo
+
+            j = 0;
+
+            // O for verifica se o numero temresto igual a 0
+            for ( i = 1;  i <= c1; i++ ) { 
+
+                if ( c1 % i == 0 ) {
+
+                    j++;
+
+                }
+
+            }
+
+            if ( j == 2 ) {
+
+                aux++;
+
+                if ( num % c1 == 0 && n % c1 == 0) {
+
+                    printf("%i, %i | %i\n", num, n, c1);
+
+                    mdc *= c1;
+
+                    num /= c1;
+                    n /= c1;
+
+                    c1 = 1; // faz voltar os numeros
+
+                }
+                else if ( num % c1 == 0 && !  (n % c1 == 0 )) {
+
+                    printf("%i, %i | %i\n", num, n, c1);
+
+                    num /= c1;
+
+                    c1 = 1; // faz voltar os numeros
+
+                }
+                else if ( n % c1 == 0 && ! (num % c1 == 0 )) {
+
+                    printf("%i, %i | %i\n", num, n, c1);
+
+                    n /= c1;
+
+                    c1 = 1;
+
+                }
+                
+            }
+
+
+            }
+
+            printf("%i, %i |   \n", num, n);
+
+            printf("\nO MDC dos numeros digitados e: %i\n\n", mdc);
+
+            printf("Pressione \"Enter\" para retornar ao Menu!\n");
+
+            getchar();
+
+            
         }
 
     }while (op != 12);

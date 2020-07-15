@@ -1,15 +1,13 @@
+ 
 #include <stdio.h> 
 #include <stdlib.h> 
 
 /*
     Trabalho para a disciplina Tópicos especiais (SIN 494)
-
     Alunos: 
     Carlos Eduardo Máximo, João Pedro Pereira da Silva e Pedro Emanuel de Avelar Sousa de Almeida
-
     Matricula: 
      6962, 5199 e 6965 (respectivamente aos nomes)
-
     Nome do Programa:
     Kit de Ferramentas
 */
@@ -17,7 +15,7 @@
 int main ()
 {
     int op, op_area , cont, i, c1, c2, c3, aux = 0,  num, n; // Variavel para guardar as opçoes op, cont contador = i e aux = j auxiliar, c1 = contador1
-    float lado, areaquadrado, areatriangulo, arearetangulo, base, altura, resultado;
+    float num_media, lado, areaquadrado, areatriangulo, arearetangulo, base, altura, resultado;
 
     do{
 
@@ -280,7 +278,44 @@ int main ()
             printf ("\nPressione \"Enter\" para retornar ao Menu!\n");
 
             getchar();
-    }
+
+        }
+
+        // Calcula a média dos números
+        else if(op == 6){
+
+            resultado = 0;
+            c1 = 0;
+
+            printf("Caso queria sair do programa, digite 0.\n\n");
+
+            do{
+                        
+                printf("Informe um valor: ");
+                scanf("%f", &num_media);
+                getchar();
+
+                if (num_media != 0){
+
+                    resultado += num_media; 
+                    c1++;
+
+                }
+
+
+            }while(num_media != 0);
+
+            system(" cls || clear ");
+            
+            if(c1 != 0){
+                printf("\n\nA media aritimetica dos numeros digitados e: %0.2f\n\n", resultado / c1);
+
+                printf("Pressione \"Enter\" para retornar ao Menu.\n\n");
+
+                getchar();
+            }
+
+        }
 
     }while (op != 12);
 

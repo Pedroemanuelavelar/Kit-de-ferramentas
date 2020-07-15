@@ -4,4 +4,10 @@
 <p align=center><i>Campus</i> Rio Paranaíba<br> Curso: Sistemas de Informação <br> Disciplina SIN 494 - Introdução a Programação
 </p>
 </p>
+<br>
+<hr>
+<p align=justify>
+<h2>Autores: Pedro Emanuel, Carlos Eduardo e João</h2>
+</p>
+ 
  

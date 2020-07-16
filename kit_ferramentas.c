@@ -1,4 +1,3 @@
- 
 #include <stdio.h> 
 #include <stdlib.h> 
 
@@ -14,14 +13,17 @@
 
 int main ()
 {
-    int op, op_area , cont, i, c1, j, c2, c3, aux = 0,  num, hora, minuto, ano, n, mdc; // Variavel para guardar as opçoes op, cont contador = i e aux = j auxiliar, c1 = contador1
+    int op, op_area , cont, i, c1, j, c2, c3, aux = 0,  num, segundos, hora, minuto, ano, n, mdc; // Variavel para guardar as opçoes op, cont contador = i e aux = j auxiliar, c1 = contador1
+    int d1, dias, meses, d2, m1, m2, a1, a2, a, d, m;
     float num_media, lado, areaquadrado, areatriangulo, arearetangulo, base, altura, resultado;
+    float n1,n2;
+    char sinal;
 
     do{
 
         system (" cls || clear ");
 
-        printf("========== { MENU - KIT DE FERRAMENTAS }==========");
+        printf("========== { MENU - KIT DE FERRAMENTAS } ==========");
 
         printf("\n\nInformar o numero de acordo com a ferramenta que deseja utilizar:\n\n");
         printf("(1) Verificar se o numero e primo\n");
@@ -32,7 +34,7 @@ int main ()
         printf("(6) Calcula a media aritimetica dos numeros digitiados\n");
         printf("(7) Calcula o maximo divisor comum entre dois numeros\n");
         printf("(8) Calculadora\n");
-        printf("(9) Calcula a diferença entre duas datas em anos, meses\n");
+        printf("(9) Calcula a diferença entre duas datas em dias, meses e anos\n");
         printf("(10) Converter um numero decimal inteiro para romano\n");
         printf("(11) Converta o tempo dado em segundos para horas, minutos e segundos\n");
         printf("(12) Para encerrar o programa!\n\n");
@@ -78,7 +80,6 @@ int main ()
         }
         
         // Programa para calcular area da figura.
-
         else if (op == 2) {
             
             system(" cls || clear ");
@@ -168,6 +169,7 @@ int main ()
     
         }
 
+        // Sequencia de Fibinacci
         else if (op == 3) {
 
             printf("Qual elemento da sequencia de Fibonacci voce deseja saber?\n\n");
@@ -197,6 +199,7 @@ int main ()
         
         }
 
+        // Calcula o fatorial
         else if (op == 4) {
             
             printf("\nInforme um numero para calcular seu fatorial: \n\n");
@@ -233,6 +236,7 @@ int main ()
             
         }
 
+        // Calcula x a y
         else if (op == 5) {
 
             system (" cls || clear ");
@@ -401,6 +405,414 @@ int main ()
 
             
         }
+
+        // Calculadora
+        else if (op == 8){
+            
+            resultado = 0;
+            j = 0;
+
+            do{
+
+                system(" cls || clear ");
+
+
+                printf("\n\nDigite um dos simbolos para efetuar a operacao: \n\n");
+                printf("Soma [+]\n");
+                printf("Subtracao [-]\n");
+                printf("Divisao [/]\n");
+                printf("Multiplicacao [*]\n");
+                printf("Sair [E]\n\n");
+                scanf("%c", &sinal);
+                getchar();
+
+                system(" cls || clear ");
+
+                switch(sinal){
+                    case '+': 
+                        printf("\nDigite um valor: ");
+                        scanf("%f", &n1); // 1
+                        getchar();
+
+                        printf("\nDigite outro valor: ");
+                        scanf("%f", &n2);
+                        getchar(); // 2 // resultado = 5
+
+                        system(" cls || clear ");
+
+                        if(j == 0){
+
+                            resultado += n1 + n2;
+                            printf("\n\nA soma de %0.2f e %0.2f e: %0.2f\n", n1, n2, resultado);
+
+                        }else{
+
+                            printf("\n\nA soma de %0.2f e %0.2f e: %0.2f\n", n1 + n2,resultado, resultado + n1 + n2);
+                            resultado += n1 + n2;
+
+                        }
+
+                        printf("\nPressione \"Enter\" para retornar ao menu!\n");
+
+                        getchar();
+
+                    break;
+
+                    case '-':
+
+                        printf("\nDigite um valor: ");
+                        scanf("%f", &n1);
+                        getchar();
+
+                        printf("\nDigite outro valor: ");
+                        scanf("%f", &n2);
+                        getchar();
+
+                        system(" cls || clear ");
+
+                        if(j == 0){
+                            
+                            resultado = n1-n2;
+                            printf("\n\nA subtracao de %0.2f e %0.2f e: %0.2f\n", n1,n2,resultado);
+
+                        }else{
+
+                            printf("\n\nA subtracao de %0.2f e %0.2f e: %0.2f\n", n1 - n2, resultado, resultado - (n1 - n2));
+                            resultado = resultado - (n1 - n2);
+
+                        }
+
+                        printf("\nPressione \"Enter\" para retornar ao menu!\n");
+
+                        getchar();
+
+                    break;
+
+                    case '/':
+
+                        printf("\nDigite um valor: ");
+                        scanf("%f", &n1);
+                        getchar();
+
+                        printf("\nDigite outro valor: ");
+                        scanf("%f", &n2);
+                        getchar();
+
+                        system(" cls || clear ");
+
+                        if (j == 0){
+                            
+                            resultado = n1 / n2;
+                            printf("\n\nA divisao de %0.2f com %0.2f e: %0.2f\n", n1, n2,resultado);
+                            
+                        }else{
+
+                            printf("\n\nA divisao de %0.2f por %0.2f e: %0.2f\n", resultado,n1/n2, resultado / (n1 /n2));
+                            resultado = resultado / (n1 / n2);
+
+                        }
+
+                        printf("\nPressione \"Enter\" para retornar ao menu!\n");
+
+                        getchar();
+
+                    break;
+
+                    case '*':
+
+                        printf("\nDigite um valor: ");
+                        scanf("%f", &n1);
+                        getchar();
+
+                        printf("\nDigite outro valor: ");
+                        scanf("%f", &n2);
+                        getchar();
+
+                        system(" cls || clear ");
+
+                        if ( j == 0){
+
+                            resultado = n1*n2;
+                            printf("\n\nA multiplicacao de %0.2f por %0.2f e: %0.2f", n1, n2, resultado);
+
+                        }else{
+
+                            printf("\n\nA multiplicacao de %0.2f por %0.2f e: %0.2f", resultado, n1 * n2, resultado * ( n1 * n2));
+                            resultado = resultado * ( n1 * n2);
+
+                        }
+
+                        printf("\nPressione \"Enter\" para retornar ao menu!\n");
+
+                        getchar();
+
+                    break;
+
+                }
+
+                if(sinal == 'e'){
+
+                    sinal = 'E';
+
+                }
+
+                j++;
+
+            }while (sinal != 'E');
+        }
+
+        // Diferença entre dias meses e anos  
+        else if (op == 9){
+
+        printf("Informe a primeira data DD/MM/YYYY: "); 
+        scanf("%i / %i / %i", &d1, &m1, &a1);
+
+        printf("\nInforme a segunda data DD/MM/YYYY: ");
+        scanf("%i / %i / %i", &d2, &m2, &a2);
+
+        getchar();
+
+        // Verifica a data mais antiga e passa para o a2, m2 e o d2
+        if (a1 < a2) {
+
+            aux = a1;
+            a1 = a2;
+            a2 = aux;
+
+            aux = m1;
+            m1 = m2;
+            m2 = aux;
+
+            aux = d1;
+            d1 = d2;
+            d2 = aux;
+
+        }
+        else if (m1 < m2 && a1 == a2) {
+            
+            aux = a1;
+            a1 = a2;
+            a2 = aux;
+
+            aux = m1;
+            m1 = m2;
+            m2 = aux;
+
+            aux = d1;
+            d1 = d2;
+            d2 = aux;
+
+        }
+        else if (d1 < d2 && m1 == m2) {
+            aux = a1;
+            a1 = a2;
+            a2 = aux;
+
+            aux = m1;
+            m1 = m2;
+            m2 = aux;
+
+            aux = d1;
+            d1 = d2;
+            d2 = aux;
+        }
+
+        a = 0;
+        d = 0;
+        m = 0; 
+    
+    // Pega a data mais antiga e atualiza até a data atual
+    while( d1 != d2 || m1 != m2 || a1 != a2) { // 1/03/2020  e 28 / 02 /2020
+
+        // Identifica quantos dias o mes tem
+        switch (m2) {
+
+            case 1:
+                dias = 31;
+            break;
+
+            case 2:
+                dias = 28;
+
+                if ( a2 % 4 == 0 ) {
+
+                    dias = 29;
+
+                }
+
+            break;
+
+            case 3:
+                dias = 31;
+            break;
+
+            case 4:
+                dias = 30;
+            break;
+
+            case 5:
+                dias = 31;
+            break;
+
+            case 6:
+                dias = 30;
+            break;
+
+            case 7:
+                dias = 31;
+            break;
+
+            case 8:
+                dias = 31;
+            break;
+
+            case 9:
+                dias = 30;
+            break;
+
+            case 10:
+                dias = 31;
+            break;
+
+            case 11:
+                dias = 30;
+            break;
+
+            case 12:
+                dias = 31;
+            break;
+
+        }
+        
+        // Verifica se o mes acaabou
+        if (d2 > dias) { 
+            
+            d2 = 1; 
+            m2++;
+
+        } 
+        
+        // Verifica se o ano acabou
+        if (m2 > 12) {
+
+            m2 = 1;
+            a2++;
+            
+        }
+        
+        // Atualiza os dias
+        if ((d1 != d2 || m1 != m2 || a1 != a2)) {
+            d2++;
+            d++;
+        }
+
+        
+        if (m2 == 3)  { // Cuida de quando o mes ta passando de fevereiro pra março 
+
+            if (a2 % 4 == 0 && d > 29) { // Verifica se o ano é bissexto, se for só ira completar o mes com 29 dias
+
+                m++;
+                d = 0;
+
+            }
+            else if (a2 % 4 != 0 && d > 28) { // Verifica se o ano não é bissexto, se não for ira completar com 28 dias
+
+                m++;  
+                d = 0;
+
+            }
+
+        }
+        else { 
+
+            if (m2 == 8 && d >= 31) {
+    
+                m++;
+                d = 0;
+                
+            }
+
+            else if (m2 < 8) {
+                    
+                if (m2 % 2 == 0 && d >= 31) {
+
+                    m++;
+                    d = 0;
+
+                }
+                else {
+
+                    if (m2 % 2 != 0 && d >= 30 ) {
+
+                        m++;
+                        d = 0;
+                        
+                    }
+
+                } 
+
+            
+            }
+            else if (m2 < 13) {
+                if (m2 % 2 == 0 && d >= 30) {
+
+                    m++;
+                    d = 0;
+
+                }
+                else {
+
+                    if (m2 % 2 != 0 && d >= 31 ) {
+                        m++;
+                        d = 0;
+                    }
+            }
+
+        }  
+        
+        }
+
+        if (m >= 12) {
+            a++;
+            m = 0;
+        }
+    }
+
+    printf("\nPassaram se %i anos, %i meses, %i dias\n", a, m, d);
+
+    printf("\nPressione \"Enter\" para retornar ao menu!\n");
+
+    getchar();
+
+    system(" cls || clear ");
+
+    }
+
+    if( op == 10){
+
+        printf("\n\nPrograma em desenvolvimento.");
+
+    }
+
+    if(op == 11){
+
+        printf("Informe o tempo em segundos: ");
+        scanf("%d", &segundos);
+        getchar();
+
+        minuto = segundos / 60; // passa pra minuto
+        segundos = minuto % 60; // segundos
+        hora = minuto / 60; // passa pra horas
+        minuto = minuto % 60; // minutos
+        hora = hora % 60; // horas
+
+        printf("\n\n%d:%d:%d", hora,minuto,segundos);
+
+        printf("\nPressione \"Enter\" para retornar ao menu!\n");
+
+        getchar();
+
+    }
 
     }while (op != 12);
 

@@ -5,8 +5,10 @@
     Trabalho para a disciplina Tópicos especiais (SIN 494)
     Alunos: 
     Carlos Eduardo Máximo, João Pedro Pereira da Silva e Pedro Emanuel de Avelar Sousa de Almeida
+
     Matricula: 
      6962, 5199 e 6965 (respectivamente aos nomes)
+     
     Nome do Programa:
     Kit de Ferramentas
 */
@@ -34,7 +36,7 @@ int main ()
         printf("(6) Calcula a media aritimetica dos numeros digitiados\n");
         printf("(7) Calcula o maximo divisor comum entre dois numeros\n");
         printf("(8) Calculadora\n");
-        printf("(9) Calcula a diferença entre duas datas em dias, meses e anos\n");
+        printf("(9) Calcula a diferenca entre duas datas em dias, meses e anos\n");
         printf("(10) Converter um numero decimal inteiro para romano\n");
         printf("(11) Converta o tempo dado em segundos para horas, minutos e segundos\n");
         printf("(12) Para encerrar o programa!\n\n");
@@ -561,16 +563,82 @@ int main ()
             }while (sinal != 'E');
         }
 
-        // Diferença entre dias meses e anos  
+        // Diferença entre dias meses e anos 
+        // Programa em manutenção 
         else if (op == 9){
 
-        printf("Informe a primeira data DD/MM/YYYY: "); 
-        scanf("%i / %i / %i", &d1, &m1, &a1);
+        printf("O programa esta em manutencao, estamos corrigindo bugs.");
+		getchar();
+        
+		if(1)
+		{
+			break;
+		}
 
-        printf("\nInforme a segunda data DD/MM/YYYY: ");
-        scanf("%i / %i / %i", &d2, &m2, &a2);
+        do{
 
-        getchar();
+            system("cls||clear");
+			
+			printf("\nInforme o dia da primeira data: "); 
+			scanf("%i", &d1);
+			getchar();
+			
+        }while(!(d1 > 0 && d1 <= 31));
+        
+        do{
+
+            system("cls||clear");
+			
+			printf("\nInforme o mes da primera data: ");
+			scanf("%i", &m1);
+			getchar();
+			
+        }while(!(m1 > 0 && m1 <= 12));
+
+        do{
+
+            system("cls||clear");
+
+			printf("\nInforme o ano da primeira data: ");
+        	scanf("%i", &a1);
+        	getchar();
+
+        }while(!(ano > 0));
+        
+        
+        system("cls||clear");
+
+        do{
+
+            system("cls||clear");
+
+			printf("\nInforme o dia da segunda data: ");
+			scanf("%i", &d2);
+			getchar();
+
+        }while(!(d2 > 0 && d2 <= 31));
+
+        do{
+            
+            system("cls||clear");
+
+            printf("\nInforme o mes da segunda data: ");
+            scanf("%i", &m2);
+            getchar();
+
+        }while (!(m2 > 0 && m2 <= 12));
+
+        do{
+
+            system("cls||clear");
+
+            printf("\nInforme o ano da segunda data: ");
+            scanf("%i", &a2);
+            getchar();
+
+        }while(!(a2 > 0));
+
+        system("cls||clear");
 
         // Verifica a data mais antiga e passa para o a2, m2 e o d2
         if (a1 < a2) {
@@ -620,9 +688,13 @@ int main ()
         a = 0;
         d = 0;
         m = 0; 
-    
+
+    printf("As datas digitadas foram: \n");
+	printf("%i/%i/%i\n",d2,m2,a2);
+    printf("%i/%i/%i\n\n",d1,m2,a1);
+
     // Pega a data mais antiga e atualiza até a data atual
-    while( d1 != d2 || m1 != m2 || a1 != a2) { // 1/03/2020  e 28 / 02 /2020
+    while((d1 != d2 || m1 != m2 || a1 != a2)) { // 1/03/2020  e 28 / 02 /2020
 
         // Identifica quantos dias o mes tem
         switch (m2) {
@@ -699,12 +771,6 @@ int main ()
             a2++;
             
         }
-        
-        // Atualiza os dias
-        if ((d1 != d2 || m1 != m2 || a1 != a2)) {
-            d2++;
-            d++;
-        }
 
         
         if (m2 == 3)  { // Cuida de quando o mes ta passando de fevereiro pra março 
@@ -715,7 +781,7 @@ int main ()
                 d = 0;
 
             }
-            else if (a2 % 4 != 0 && d > 28) { // Verifica se o ano não é bissexto, se não for ira completar com 28 dias
+            else if (a2 % 4 != 0 && d >= 28 && d2 < 29) { // Verifica se o ano não é bissexto, se não for ira completar com 28 dias
 
                 m++;  
                 d = 0;
@@ -725,11 +791,11 @@ int main ()
         }
         else { 
 
-            if (m2 == 8 && d >= 31) {
+            if ((m2 == 8 ||  m2 == 1 ) && (d >= 31) && (d2 < 31) ) {  // Não pode ser
     
                 m++;
                 d = 0;
-                
+
             }
 
             else if (m2 < 8) {
@@ -740,35 +806,31 @@ int main ()
                     d = 0;
 
                 }
-                else {
+                else if (m2 != 1 && m2 % 2 != 0 && d >= 30 && d2 < 31 ) {
 
-                    if (m2 % 2 != 0 && d >= 30 ) {
-
-                        m++;
-                        d = 0;
-                        
-                    }
-
+                    m++;
+                    d = 0;
+                    
                 } 
 
             
             }
-            else if (m2 < 13) {
-                if (m2 % 2 == 0 && d >= 30) {
+            else if (m2 < 13 && m2 != 8) {
+
+                if (m2 % 2 == 0 && d >= 30 && d2 < 31) {
 
                     m++;
                     d = 0;
 
                 }
-                else {
+                else if (m2 % 2 != 0 && d >= 31 ) {
 
-                    if (m2 % 2 != 0 && d >= 31 ) {
-                        m++;
-                        d = 0;
-                    }
-            }
+                    m++;
+                    d = 0;
+                    
+                }
 
-        }  
+            }  
         
         }
 
@@ -776,9 +838,13 @@ int main ()
             a++;
             m = 0;
         }
+
+        // Atualiza os dias
+        d2++;
+        d++;
     }
 
-    printf("\nPassaram se %i anos, %i meses, %i dias\n", a, m, d);
+    printf("\nSe passaram %i anos, %i meses, %i dias entre essas duas datas.\n", a, m, d);
 
     printf("\nPressione \"Enter\" para retornar ao menu!\n");
 
@@ -788,11 +854,147 @@ int main ()
 
     }
 
-    if( op == 10){
+    if(op == 10){
 
-        printf("\n\nPrograma em desenvolvimento.");
+    printf("Informe o numero que deseja converter em numero Romano: \n\n");
+    scanf("%d", &num);
+    
+    getchar();
 
+    // Para caso o usuário digite um número acima de 3000 ou 0, irá cair no while, tabela pego no site https://www.todamateria.com.br/numeros-romanos/
+    while (num > 3000 || num == 0) {
+
+        system(" cls || clear ");
+
+        printf("Favor, informar um numero menor que 3000 e diferente de 0, digite novamente: \n\n");
+        scanf("%d", &num);
+
+        getchar();
     }
+    
+    system(" cls || clear ");
+    printf("O numero %d em romano e: ", num);
+    
+    //deve verificar cada dígito do número para poder converter, ao final da verificação, é retirado do dígito da esquerda
+    
+    if(num > 999) { 
+        switch (num / 1000) {
+            case 1:
+                printf("M");
+                break;
+            case 2:
+                printf("MM");
+                break;
+        }
+        
+        num = num % 1000;
+    }
+    
+    if(num > 99) { 
+        switch (num / 100) {
+            case 1:
+                printf("C");
+                break;
+            case 2:
+                printf("CC");
+                break;
+            case 3:
+                printf("CCC");
+                break;
+            case 4:
+                printf("CD");
+                break;
+            case 5:
+                printf("D");
+                break;
+            case 6:
+                printf("DC");
+                break;
+            case 7:
+                printf("DCC");
+                break;
+            case 8:
+                printf("DCCC");
+                break;
+            case 9:
+                printf("CM");
+                break;
+        }
+        
+        num = num % 100;
+    }
+    
+    if(num > 9) { 
+        switch (num / 10) {
+            case 1:
+                printf("X");
+                break;
+            case 2:
+                printf("XX");
+                break;
+            case 3:
+                printf("XXX");
+                break;
+            case 4:
+                printf("XL");
+                break;
+            case 5:
+                printf("L");
+                break;
+            case 6:
+                printf("LX");
+                break;
+            case 7:
+                printf("LXX");
+                break;
+            case 8:
+                printf("LXXX");
+                break;
+            case 9:
+                printf("XC");
+                break;
+        }
+        
+        num = num % 10;
+    }
+
+    if(num > 0) { 
+        switch (num) {
+            case 1:
+                printf("I");
+                break;
+            case 2:
+                printf("II");
+                break;
+            case 3:
+                printf("III");
+                break;
+            case 4:
+                printf("IV");
+                break;
+            case 5:
+                printf("V");
+                break;
+            case 6:
+                printf("VI");
+                break;
+            case 7:
+                printf("VII");
+                break;
+            case 8:
+                printf("VIII");
+                break;
+            case 9:
+                printf("IX");
+                break;
+        }
+    }
+    printf("\n\nPressione \"Enter\" para retornar ao menu!\n");
+    getchar();
+
+    system(" cls || clear ");
+
+}
 
     if(op == 11){
 
@@ -801,12 +1003,13 @@ int main ()
         getchar();
 
         minuto = segundos / 60; // passa pra minuto
-        segundos = minuto % 60; // segundos
+        segundos = segundos % 60; // segundos
         hora = minuto / 60; // passa pra horas
         minuto = minuto % 60; // minutos
-        hora = hora % 60; // horas
 
-        printf("\n\n%d:%d:%d", hora,minuto,segundos);
+        system("cls||clear");
+
+        printf("\n\n%d horas, %d minutos e %d segundos.\n", hora,minuto,segundos);
 
         printf("\nPressione \"Enter\" para retornar ao menu!\n");
 

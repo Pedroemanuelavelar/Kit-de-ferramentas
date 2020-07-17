@@ -5,10 +5,8 @@
     Trabalho para a disciplina Tópicos especiais (SIN 494)
     Alunos: 
     Carlos Eduardo Máximo, João Pedro Pereira da Silva e Pedro Emanuel de Avelar Sousa de Almeida
-
     Matricula: 
      6962, 5199 e 6965 (respectivamente aos nomes)
-     
     Nome do Programa:
     Kit de Ferramentas
 */
@@ -564,312 +562,218 @@ int main ()
         }
 
         // Diferença entre dias meses e anos 
-        // Programa em manutenção 
         else if (op == 9){
+            
+            do{
 
-        printf("O programa esta em manutencao, estamos corrigindo bugs.");
-		getchar();
-        
-		if(1)
-		{
-			break;
-		}
+                system("cls||clear");
+                
+                printf("\nInforme o dia da primeira data: "); 
+                scanf("%i", &d1);
+                getchar();
+                
+            }while(!(d1 > 0 && d1 <= 31));
+            
+            do{
 
-        do{
+                system("cls||clear");
+                
+                printf("\nInforme o mes da primera data: ");
+                scanf("%i", &m1);
+                getchar();
+                
+            }while(!(m1 > 0 && m1 <= 12));
 
-            system("cls||clear");
-			
-			printf("\nInforme o dia da primeira data: "); 
-			scanf("%i", &d1);
-			getchar();
-			
-        }while(!(d1 > 0 && d1 <= 31));
-        
-        do{
+            do{
 
-            system("cls||clear");
-			
-			printf("\nInforme o mes da primera data: ");
-			scanf("%i", &m1);
-			getchar();
-			
-        }while(!(m1 > 0 && m1 <= 12));
+                system("cls||clear");
 
-        do{
+                printf("\nInforme o ano da primeira data: ");
+                scanf("%i", &a1);
+                getchar();
 
-            system("cls||clear");
-
-			printf("\nInforme o ano da primeira data: ");
-        	scanf("%i", &a1);
-        	getchar();
-
-        }while(!(ano > 0));
-        
-        
-        system("cls||clear");
-
-        do{
-
-            system("cls||clear");
-
-			printf("\nInforme o dia da segunda data: ");
-			scanf("%i", &d2);
-			getchar();
-
-        }while(!(d2 > 0 && d2 <= 31));
-
-        do{
+            }while(!(a1 > 0));
+            
             
             system("cls||clear");
 
-            printf("\nInforme o mes da segunda data: ");
-            scanf("%i", &m2);
+            do{
+
+                system("cls||clear");
+
+                printf("\nInforme o dia da segunda data: ");
+                scanf("%i", &d2);
+                getchar();
+
+            }while(!(d2 > 0 && d2 <= 31));
+
+            do{
+                
+                system("cls||clear");
+
+                printf("\nInforme o mes da segunda data: ");
+                scanf("%i", &m2);
+                getchar();
+
+            }while (!(m2 > 0 && m2 <= 12));
+
+            do{
+
+                system("cls||clear");
+
+                printf("\nInforme o ano da segunda data: ");
+                scanf("%i", &a2);
+                getchar();
+
+            }while(!(a2 > 0));
+
+            system("cls||clear");
+
+            // Verifica a data mais antiga e passa para o a2, m2 e o d2
+            if (a1 < a2) {
+
+                aux = a1;
+                a1 = a2;
+                a2 = aux;
+
+                aux = m1;
+                m1 = m2;
+                m2 = aux;
+
+                aux = d1;
+                d1 = d2;
+                d2 = aux;
+
+            }
+            else if (m1 < m2 && a1 == a2) {
+                
+                aux = a1;
+                a1 = a2;
+                a2 = aux;
+
+                aux = m1;
+                m1 = m2;
+                m2 = aux;
+
+                aux = d1;
+                d1 = d2;
+                d2 = aux;
+
+            }
+            else if (d1 < d2 && m1 == m2) {
+                aux = a1;
+                a1 = a2;
+                a2 = aux;
+
+                aux = m1;
+                m1 = m2;
+                m2 = aux;
+
+                aux = d1;
+                d1 = d2;
+                d2 = aux;
+            }
+
+            // diferença das datas
+            a = a1 - a2;
+            d = d1 - d2;
+            m = m1 - m2;
+            
+            if (d < 0) {
+                
+                switch (m1) {
+
+                    case 1:
+                        dias = 31;
+                    break;
+
+                    case 2:
+
+                        if ( a1 % 4 == 0) {
+
+                            dias = 29;
+
+                        }
+                        else {
+
+                            dias = 28;
+
+                        }
+
+                    break;
+
+                    case 3:
+                        dias = 31;
+                    break;
+
+                    case 4:
+                        dias = 30;
+                    break;
+
+                    case 5:
+                        dias = 31;
+                    break;
+
+                    case 6:
+                        dias = 30;
+                    break;
+
+                    case 7:
+                        dias = 31;
+                    break;
+
+                    case 8:
+                        dias = 31;
+                    break;
+
+                    case 9:
+                        dias = 30;
+                    break;
+
+                    case 10:
+                        dias = 31;
+                    break;
+
+                    case 11:
+                        dias = 30;
+                    break;
+
+                    case 12:
+                        dias = 31;
+                    break;
+
+                }
+
+                d += dias;        
+                m--;
+                
+            } 
+
+            if (m < 0) {
+                
+                m += 12;
+                a--;
+                
+            }
+
+            printf("A diferenca entre essas duas datas e: \n");
+            printf("\n\t%2i/%2i/%2i\n", d1, m1, a1%100);
+            printf("\t-\n");
+            printf("\t%2i/%2i/%2i\n", d2, m2, a2%100);
+            printf("\t_________\n\n");
+
+            printf("\nSe passaram %i anos, %i meses, %i dias entre essas duas datas.\n", a, m, d);
+
+            printf("\nPressione \"Enter\" para retornar ao menu!\n");
+
             getchar();
 
-        }while (!(m2 > 0 && m2 <= 12));
-
-        do{
-
-            system("cls||clear");
-
-            printf("\nInforme o ano da segunda data: ");
-            scanf("%i", &a2);
-            getchar();
-
-        }while(!(a2 > 0));
-
-        system("cls||clear");
-
-        // Verifica a data mais antiga e passa para o a2, m2 e o d2
-        if (a1 < a2) {
-
-            aux = a1;
-            a1 = a2;
-            a2 = aux;
-
-            aux = m1;
-            m1 = m2;
-            m2 = aux;
-
-            aux = d1;
-            d1 = d2;
-            d2 = aux;
+            system(" cls ||  clear "); 
 
         }
-        else if (m1 < m2 && a1 == a2) {
-            
-            aux = a1;
-            a1 = a2;
-            a2 = aux;
 
-            aux = m1;
-            m1 = m2;
-            m2 = aux;
+        if(op == 10){
 
-            aux = d1;
-            d1 = d2;
-            d2 = aux;
-
-        }
-        else if (d1 < d2 && m1 == m2) {
-            aux = a1;
-            a1 = a2;
-            a2 = aux;
-
-            aux = m1;
-            m1 = m2;
-            m2 = aux;
-
-            aux = d1;
-            d1 = d2;
-            d2 = aux;
-        }
-
-        a = 0;
-        d = 0;
-        m = 0; 
-
-    printf("As datas digitadas foram: \n");
-	printf("%i/%i/%i\n",d2,m2,a2);
-    printf("%i/%i/%i\n\n",d1,m2,a1);
-
-    // Pega a data mais antiga e atualiza até a data atual
-    while((d1 != d2 || m1 != m2 || a1 != a2)) { // 1/03/2020  e 28 / 02 /2020
-
-        // Identifica quantos dias o mes tem
-        switch (m2) {
-
-            case 1:
-                dias = 31;
-            break;
-
-            case 2:
-                dias = 28;
-
-                if ( a2 % 4 == 0 ) {
-
-                    dias = 29;
-
-                }
-
-            break;
-
-            case 3:
-                dias = 31;
-            break;
-
-            case 4:
-                dias = 30;
-            break;
-
-            case 5:
-                dias = 31;
-            break;
-
-            case 6:
-                dias = 30;
-            break;
-
-            case 7:
-                dias = 31;
-            break;
-
-            case 8:
-                dias = 31;
-            break;
-
-            case 9:
-                dias = 30;
-            break;
-
-            case 10:
-                dias = 31;
-            break;
-
-            case 11:
-                dias = 30;
-            break;
-
-            case 12:
-                dias = 31;
-            break;
-
-        }
-        
-        // Verifica se o mes acaabou
-        if (d2 > dias) { 
-            
-            d2 = 1; 
-            m2++;
-
-        } 
-        
-        // Verifica se o ano acabou
-        if (m2 > 12) {
-
-            m2 = 1;
-            a2++;
-            
-        }
-
-        
-        if (m2 == 3)  { // Cuida de quando o mes ta passando de fevereiro pra março 
-
-            if (a2 % 4 == 0 && d > 29) { // Verifica se o ano é bissexto, se for só ira completar o mes com 29 dias
-
-                m++;
-                d = 0;
-
-            }
-            else if (a2 % 4 != 0 && d >= 28 && d2 < 29) { // Verifica se o ano não é bissexto, se não for ira completar com 28 dias
-
-                m++;  
-                d = 0;
-
-            }
-
-        }
-        else { 
-
-            if ((m2 == 8 ||  m2 == 1 ) && (d >= 31) && (d2 < 31) ) {  // Não pode ser
-    
-                m++;
-                d = 0;
-
-            }
-
-            else if (m2 < 8) {
-                    
-                if (m2 % 2 == 0 && d >= 31) {
-
-                    m++;
-                    d = 0;
-
-                }
-                else if (m2 != 1 && m2 % 2 != 0 && d >= 30 && d2 < 31 ) {
-
-                    m++;
-                    d = 0;
-                    
-                } 
-
-            
-            }
-            else if (m2 < 13 && m2 != 8) {
-
-                if (m2 % 2 == 0 && d >= 30 && d2 < 31) {
-
-                    m++;
-                    d = 0;
-
-                }
-                else if (m2 % 2 != 0 && d >= 31 ) {
-
-                    m++;
-                    d = 0;
-                    
-                }
-
-            }  
-        
-        }
-
-        if (m >= 12) {
-            a++;
-            m = 0;
-        }
-
-        // Atualiza os dias
-        d2++;
-        d++;
-    }
-
-    printf("\nSe passaram %i anos, %i meses, %i dias entre essas duas datas.\n", a, m, d);
-
-    printf("\nPressione \"Enter\" para retornar ao menu!\n");
-
-    getchar();
-
-    system(" cls || clear ");
-
-    }
-
-    if(op == 10){
-
-    printf("Informe o numero que deseja converter em numero Romano: \n\n");
-    scanf("%d", &num);
-    
-    getchar();
-
-    // Para caso o usuário digite um número acima de 3000 ou 0, irá cair no while, tabela pego no site https://www.todamateria.com.br/numeros-romanos/
-    while (num > 3000 || num == 0) {
-
-        system(" cls || clear ");
-
-<<<<<<< HEAD
-        printf("Favor, informar um numero menor que 3000 e diferente de 0, digite novamente: \n\n");
-        scanf("%d", &num);
-=======
         printf("Informe o numero que deseja converter em numero Romano: \n\n");
         scanf("%d", &num);
         
@@ -892,249 +796,123 @@ int main ()
         //deve verificar cada dígito do número para poder converter, ao final da verificação, é retirado do dígito da esquerda
         
         if(num > 999) { 
-        	switch (num / 1000) {
-        		case 1:
-        			printf("M");
-        			break;
-        		case 2:
-        			printf("MM");
-        			break;
-			}
-			
-			num = num % 1000;
-		}
-		
+            switch (num / 1000) {
+                case 1:
+                    printf("M");
+                    break;
+                case 2:
+                    printf("MM");
+                    break;
+            }
+            
+            num = num % 1000;
+        }
+        
         if(num > 99) { 
-        	switch (num / 100) {
-        		case 1:
-        			printf("C");
-        			break;
-        		case 2:
-        			printf("CC");
-        			break;
-        		case 3:
-        			printf("CCC");
-        			break;
-        		case 4:
-        			printf("CD");
-        			break;
-        		case 5:
-        			printf("D");
-        			break;
-        		case 6:
-        			printf("DC");
-        			break;
-        		case 7:
-        			printf("DCC");
-        			break;
-        		case 8:
-        			printf("DCCC");
-        			break;
-        		case 9:
-        			printf("CM");
-        			break;
-			}
-			
-			num = num % 100;
-		}
-		
+            switch (num / 100) {
+                case 1:
+                    printf("C");
+                    break;
+                case 2:
+                    printf("CC");
+                    break;
+                case 3:
+                    printf("CCC");
+                    break;
+                case 4:
+                    printf("CD");
+                    break;
+                case 5:
+                    printf("D");
+                    break;
+                case 6:
+                    printf("DC");
+                    break;
+                case 7:
+                    printf("DCC");
+                    break;
+                case 8:
+                    printf("DCCC");
+                    break;
+                case 9:
+                    printf("CM");
+                    break;
+            }
+            
+            num = num % 100;
+        }
+        
         if(num > 9) { 
-        	switch (num / 10) {
-        		case 1:
-        			printf("X");
-        			break;
-        		case 2:
-        			printf("XX");
-        			break;
-        		case 3:
-        			printf("XXX");
-        			break;
-        		case 4:
-        			printf("XL");
-        			break;
-        		case 5:
-        			printf("L");
-        			break;
-        		case 6:
-        			printf("LX");
-        			break;
-        		case 7:
-        			printf("LXX");
-        			break;
-        		case 8:
-        			printf("LXXX");
-        			break;
-        		case 9:
-        			printf("XC");
-        			break;
-			}
-			
-			num = num % 10;
-		}
+            switch (num / 10) {
+                case 1:
+                    printf("X");
+                    break;
+                case 2:
+                    printf("XX");
+                    break;
+                case 3:
+                    printf("XXX");
+                    break;
+                case 4:
+                    printf("XL");
+                    break;
+                case 5:
+                    printf("L");
+                    break;
+                case 6:
+                    printf("LX");
+                    break;
+                case 7:
+                    printf("LXX");
+                    break;
+                case 8:
+                    printf("LXXX");
+                    break;
+                case 9:
+                    printf("XC");
+                    break;
+            }
+            
+            num = num % 10;
+        }
 
         if(num > 0) { 
-        	switch (num) {
-        		case 1:
-        			printf("I");
-        			break;
-        		case 2:
-        			printf("II");
-        			break;
-        		case 3:
-        			printf("III");
-        			break;
-        		case 4:
-        			printf("IV");
-        			break;
-        		case 5:
-        			printf("V");
-        			break;
-        		case 6:
-        			printf("VI");
-        			break;
-        		case 7:
-        			printf("VII");
-        			break;
-        		case 8:
-        			printf("VIII");
-        			break;
-        		case 9:
-        			printf("IX");
-        			break;
-			}
-		}
-		printf("\n\nPressione \"Enter\" para retornar ao menu!\n");
-	    getchar();
-
-	    system(" cls || clear ");
->>>>>>> 21f48eee974c639a4bf150aae214208a5a37c173
-
+            switch (num) {
+                case 1:
+                    printf("I");
+                    break;
+                case 2:
+                    printf("II");
+                    break;
+                case 3:
+                    printf("III");
+                    break;
+                case 4:
+                    printf("IV");
+                    break;
+                case 5:
+                    printf("V");
+                    break;
+                case 6:
+                    printf("VI");
+                    break;
+                case 7:
+                    printf("VII");
+                    break;
+                case 8:
+                    printf("VIII");
+                    break;
+                case 9:
+                    printf("IX");
+                    break;
+            }
+        }
+        printf("\n\nPressione \"Enter\" para retornar ao menu!\n");
         getchar();
-    }
-    
-    system(" cls || clear ");
-    printf("O numero %d em romano e: ", num);
-    
-    //deve verificar cada dígito do número para poder converter, ao final da verificação, é retirado do dígito da esquerda
-    
-    if(num > 999) { 
-        switch (num / 1000) {
-            case 1:
-                printf("M");
-                break;
-            case 2:
-                printf("MM");
-                break;
-        }
-        
-        num = num % 1000;
-    }
-    
-    if(num > 99) { 
-        switch (num / 100) {
-            case 1:
-                printf("C");
-                break;
-            case 2:
-                printf("CC");
-                break;
-            case 3:
-                printf("CCC");
-                break;
-            case 4:
-                printf("CD");
-                break;
-            case 5:
-                printf("D");
-                break;
-            case 6:
-                printf("DC");
-                break;
-            case 7:
-                printf("DCC");
-                break;
-            case 8:
-                printf("DCCC");
-                break;
-            case 9:
-                printf("CM");
-                break;
-        }
-        
-        num = num % 100;
-    }
-    
-    if(num > 9) { 
-        switch (num / 10) {
-            case 1:
-                printf("X");
-                break;
-            case 2:
-                printf("XX");
-                break;
-            case 3:
-                printf("XXX");
-                break;
-            case 4:
-                printf("XL");
-                break;
-            case 5:
-                printf("L");
-                break;
-            case 6:
-                printf("LX");
-                break;
-            case 7:
-                printf("LXX");
-                break;
-            case 8:
-                printf("LXXX");
-                break;
-            case 9:
-                printf("XC");
-                break;
-        }
-        
-        num = num % 10;
-    }
 
-    if(num > 0) { 
-        switch (num) {
-            case 1:
-                printf("I");
-                break;
-            case 2:
-                printf("II");
-                break;
-            case 3:
-                printf("III");
-                break;
-            case 4:
-                printf("IV");
-                break;
-            case 5:
-                printf("V");
-                break;
-            case 6:
-                printf("VI");
-                break;
-            case 7:
-                printf("VII");
-                break;
-            case 8:
-                printf("VIII");
-                break;
-            case 9:
-                printf("IX");
-                break;
-        }
+        system(" cls || clear ");
+
     }
-    printf("\n\nPressione \"Enter\" para retornar ao menu!\n");
-    getchar();
-
-    system(" cls || clear ");
-
-}
 
     if(op == 11){
 

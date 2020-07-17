@@ -866,8 +866,148 @@ int main ()
 
         system(" cls || clear ");
 
+<<<<<<< HEAD
         printf("Favor, informar um numero menor que 3000 e diferente de 0, digite novamente: \n\n");
         scanf("%d", &num);
+=======
+        printf("Informe o numero que deseja converter em numero Romano: \n\n");
+        scanf("%d", &num);
+        
+        getchar();
+
+        // Para caso o usuário digite um número acima de 3000 ou 0, irá cair no while, tabela pego no site https://www.todamateria.com.br/numeros-romanos/
+        while (num > 3000 || num == 0) {
+
+            system(" cls || clear ");
+
+            printf("Favor, informar um numero menor que 3000 e diferente de 0, digite novamente: \n\n");
+            scanf("%d", &num);
+
+            getchar();
+        }
+        
+        system(" cls || clear ");
+        printf("O numero %d em romano e: ", num);
+        
+        //deve verificar cada dígito do número para poder converter, ao final da verificação, é retirado do dígito da esquerda
+        
+        if(num > 999) { 
+        	switch (num / 1000) {
+        		case 1:
+        			printf("M");
+        			break;
+        		case 2:
+        			printf("MM");
+        			break;
+			}
+			
+			num = num % 1000;
+		}
+		
+        if(num > 99) { 
+        	switch (num / 100) {
+        		case 1:
+        			printf("C");
+        			break;
+        		case 2:
+        			printf("CC");
+        			break;
+        		case 3:
+        			printf("CCC");
+        			break;
+        		case 4:
+        			printf("CD");
+        			break;
+        		case 5:
+        			printf("D");
+        			break;
+        		case 6:
+        			printf("DC");
+        			break;
+        		case 7:
+        			printf("DCC");
+        			break;
+        		case 8:
+        			printf("DCCC");
+        			break;
+        		case 9:
+        			printf("CM");
+        			break;
+			}
+			
+			num = num % 100;
+		}
+		
+        if(num > 9) { 
+        	switch (num / 10) {
+        		case 1:
+        			printf("X");
+        			break;
+        		case 2:
+        			printf("XX");
+        			break;
+        		case 3:
+        			printf("XXX");
+        			break;
+        		case 4:
+        			printf("XL");
+        			break;
+        		case 5:
+        			printf("L");
+        			break;
+        		case 6:
+        			printf("LX");
+        			break;
+        		case 7:
+        			printf("LXX");
+        			break;
+        		case 8:
+        			printf("LXXX");
+        			break;
+        		case 9:
+        			printf("XC");
+        			break;
+			}
+			
+			num = num % 10;
+		}
+
+        if(num > 0) { 
+        	switch (num) {
+        		case 1:
+        			printf("I");
+        			break;
+        		case 2:
+        			printf("II");
+        			break;
+        		case 3:
+        			printf("III");
+        			break;
+        		case 4:
+        			printf("IV");
+        			break;
+        		case 5:
+        			printf("V");
+        			break;
+        		case 6:
+        			printf("VI");
+        			break;
+        		case 7:
+        			printf("VII");
+        			break;
+        		case 8:
+        			printf("VIII");
+        			break;
+        		case 9:
+        			printf("IX");
+        			break;
+			}
+		}
+		printf("\n\nPressione \"Enter\" para retornar ao menu!\n");
+	    getchar();
+
+	    system(" cls || clear ");
+>>>>>>> 21f48eee974c639a4bf150aae214208a5a37c173
 
         getchar();
     }

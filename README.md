@@ -5,9 +5,60 @@
 </p>
 </p>
 <br>
-<hr>
-<p align=justify>
-<h2>Autores: Pedro Emanuel, Carlos Eduardo e João</h2>
+
+<h1 align=center> 🧰 Kit de Ferramentas<br></h1>
+
+<p>
+<h1 align=center>Autores</h1>
+<p align= center>
+   Carlos Eduardo Maximo - 6962<br> João Pedro Pereira da Silva - 5199 <br> Pedro Emanuel de Avelar Sousa de Almeida - 6965
 </p>
+</p>
+<hr> <br>
+<h3>
+<ol >
+<h2>🛠 Ferramentas do programa: </h2>
+<li>
+Verifica se o número é primo;
+</li>
+<li>
+Calcula a área de uma figura (funcionando para quadrado, retângulo e triângulo);
+</li>
+<li>
+Calcula o enésimo elemento da sequência de Fibonacci;
+</li>
+<li>
+Calcula o fatorial de um número;
+</li>
+<li>
+Calcula o valor de x elevado a y (xy);
+</li>
+
+<li>
+Calcula a média de n números inseridos;
+</li>
+<li>
+Calcula máximo divisor comum entre dois números;
+</li>
+<li>
+Uma calculadora com soma, subtração, multiplicação e divisão. Guardando valor  para uma próxima operação;
+</li>
+<li>
+Calcula a diferença entre duas datas em anos, meses e dias;
+</li>
+<li>
+Converta um valor inteiro decimal para número romano;
+</li>
+<li>
+Converta o tempo dado em segundos para horas, minutos e segundos;
+</li>
+</ol>
+</h3>
+<br>
+<hr>
+
+
+
+
  
  

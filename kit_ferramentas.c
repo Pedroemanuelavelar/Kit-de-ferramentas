@@ -681,7 +681,7 @@ int main ()
             
             if (d < 0) {
                 
-                switch (m1) {
+                switch (m1 - 1) {
 
                     case 1:
                         dias = 31;
@@ -738,7 +738,7 @@ int main ()
                         dias = 30;
                     break;
 
-                    case 12:
+                    case 0:
                         dias = 31;
                     break;
 

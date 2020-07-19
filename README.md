@@ -82,14 +82,14 @@ Converta o tempo dado em segundos para horas, minutos e segundos;
 <br>
 <ul>
 <li>
-1 - Abra o terminal (Ctrl + Alt + T).
+1 - Abra o terminal <strong>(Ctrl + Alt + T)</strong>.
 </li>
 
 <li>
-2 - Para verificar se o gcc esta instalado em seu computador, digite no terminal 
-gcc, caso já esteja instalado irá aparecer a seguinte mensagem “gcc : fatal error: 
-no input files”, se não estiver instalado irá aparecer, “bash: /usr/bin/gcc: Arquivo 
-ou diretorio não encontrado”.
+   2 - Para verificar se o <em>gcc</em> esta instalado em seu computador, digite no terminal 
+   <em>gcc</em>, caso já esteja instalado irá aparecer a seguinte mensagem “<strong>gcc : fatal error: 
+   no input files</strong>”, se não estiver instalado irá aparecer, “<strong>bash: /usr/bin/gcc: Arquivo 
+   ou diretorio não encontrado</strong>”.
 </li>
 
 <li>
@@ -150,8 +150,8 @@ Vscode, mas fique a vontade para escolher outro.
 </li>
 
 <li>
-8 - Pronto agora você pode rodar qualquer programa com a extensão arquivo.c, 
-para compilar os programas, é necessário rodar o comando gcc arquivo.c -o arquivo && ./arquivo .
+   8 - Pronto agora você pode rodar qualquer programa com a extensão arquivo.<strong>c</strong>, 
+para compilar os programas, é necessário rodar o comando " <code> <strong>gcc arquivo.c -o arquivo && ./arquivo</strong> </code> " .
 </li>
 </ul>
 <hr>

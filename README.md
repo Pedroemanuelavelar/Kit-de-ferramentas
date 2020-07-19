@@ -109,6 +109,7 @@ Converta o tempo dado em segundos para horas, minutos e segundos;
 </li>
 <br>
 <img src="image/Compilando3.jpg" width= 1200px>
+<li>
 6 - Pronto gcc instalado.
 </li>
 <br>

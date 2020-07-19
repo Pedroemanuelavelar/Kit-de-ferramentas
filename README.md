@@ -15,7 +15,29 @@
 </p>
 </p>
 <hr> <br>
-<h3>
+
+<p align="center">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/Pedroemanuelavelar/Kit-de-ferramentas?color=%2304D361">
+
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/Pedroemanuelavelar/Kit-de-ferramentas">
+
+  <a href="https://github.com/Pedroemanuelavelar/Kit-de-ferramentas/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/Pedroemanuelavelar/Kit-de-ferramentas">
+  </a>
+
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
+   <a href="https://github.com/Pedroemanuelavelar/Kit-de-ferramentas/stargazers">
+    <img alt="Stargazers" src="https://img.shields.io/github/stars/Pedroemanuelavelar/Kit-de-ferramentas?style=social">
+  </a>
+</p>
+<br/>
+
+<h2>1. Introdução</h2>
+<p>
+O trabalho consiste em disponibilizar diversas ferramentas de verificação, conversão
+e calculos numéricos, permitindo o usuário selecionar qual ferramenta deseja utilizar atraves de um menu.
+</p> <br>
+
 <ol >
 <h2>🛠 Ferramentas do programa: </h2>
 <li>
@@ -53,9 +75,87 @@ Converta um valor inteiro decimal para número romano;
 Converta o tempo dado em segundos para horas, minutos e segundos;
 </li>
 </ol>
-</h3>
 <br>
+<h2>2. Compilando</h2>
+<h3>2.1. Instalação do compilador GCC em distribuições Linux</h3>
+<p>Ubuntu e distribuições debian</p>
+<br>
+<ul>
+<li>
+1 - Abra o terminal (Ctrl + Alt + T).
+</li>
+
+<li>
+2 - Para verificar se o gcc esta instalado em seu computador, digite no terminal 
+gcc, caso já esteja instalado irá aparecer a seguinte mensagem “gcc : fatal error: 
+no input files”, se não estiver instalado irá aparecer, “bash: /usr/bin/gcc: Arquivo 
+ou diretorio não encontrado”.
+</li>
+
+<li>
+3 - Se nao existir o gcc em seu computador, rode o comando abaixo:
+</li>
+<br>
+<img src="image/Compilando1.jpg" width= 1200px>
+
+<li>
+4 - Apos isso irá aparecer está mensagem, digite sua senha;
+</li>
+<br>
+<img src="image/Compilando2.jpg" width= 1200px>
+
+<li>
+5 - Feito isso a instalação será executada, espere até que finalize.
+</li>
+<br>
+<img src="image/Compilando3.jpg" width= 1200px>
+6 - Pronto gcc instalado.
+</li>
+<br>
+</ul>
+
+<h2>2.2. Instalação da IDE (Visual Studio Code, Sublime Text, Code Blocks, NetBeans) </h2>
+<p>
+Existem várias IDE’s para programar em C, neste manual iremos ensinar a instalar o 
+Vscode, mas fique a vontade para escolher outro.
+</p>
+<ul>
+<li>
+1 - Abra o navegador e digite vscode, <a href="https://code.visualstudio.com/">Baixar o Vscode</a>.
+</li>
+
+<li>
+2 - Depois clique em Download, irá baixar o executável em seu computador.
+</li>
+
+<li>
+3 - Finalizado o Download, abra o arquivo.
+</li>
+
+<li>
+4 - Clique para instalar.
+</li>
+
+<li>
+5 - Programa instalado, abra e vá:
+</li> <br>
+<img src="image/Compilando4.png" width= 1200px>
+
+<li>
+6 - Após ter clicado no ícone de extensões digite C.
+</li> <br>
+<img src="image/Compilando5.jpg" width= 1200px> <br>
+<li>
+7 - Clique em instalar.
+</li>
+
+<li>
+8 - Pronto agora você pode rodar qualquer programa com a extensão arquivo.c, 
+para compilar os programas, é necessário rodar o comando gcc arquivo.c -o arquivo && ./arquivo .
+</li>
+</ul>
 <hr>
+
 
 
 
